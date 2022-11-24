@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <title>Ask Oracle</title>
+</head>
+
+<body>
+  <div class="content">
+
+    <div class="center-div">
+      <h1 class="heading">Ask the Omniscient</h1>
+      <p>Ask a question. Please make sure there are no grammatical mistakes so we can find the best results 😁</p>
+      <form action="/" method="POST" class="form">
+        <input type="text" class="form-control" name="content" id="content" placeholder="Enter your question.">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br>
+      <div class="result">
+        {% for res in result %}
+          <h1>{{res}}</h1>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
